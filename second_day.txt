@@ -312,3 +312,333 @@ $ git log --oneline --graph --decorate
 * 054b491 File1  Created with hello world and welcome me git message initial commit
 
 priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master|MERGING)
+$ git commit -am "file1 is updated for  resolve conflict "
+[master d4dda17] file1 is updated for  resolve conflict
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline
+d4dda17 (HEAD -> master) file1 is updated for  resolve conflict
+79f8ab7 file1 is updated to for login feature
+4a0f3d7 (bug2) file is updated to fix bug2
+c66c5bd file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --online --graph --decorate
+fatal: unrecognized argument: --online
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline --graph --decorate
+*   d4dda17 (HEAD -> master) file1 is updated for  resolve conflict
+|\
+| * 4a0f3d7 (bug2) file is updated to fix bug2
+* | 79f8ab7 file1 is updated to for login feature
+|/
+* c66c5bd file is updated to fix bug1
+* 6eba3f0 file is updated
+* da53863 File to be Removed
+* 3f8c245 File tobe Deleted Added
+* f3200af created gitignore file to skip
+* 77618a4 File1 updates for feature logout
+* 55c9ad4 File1 updates for feature login
+* 054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git checkout -b CR1
+Switched to a new branch 'CR1'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git status
+On branch CR1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        New Text Document (2).txt
+        second_day.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git add .
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git commit -am "file 2 added for CR1 "
+[CR1 f36cab6] file 2 added for CR1
+ 2 files changed, 315 insertions(+)
+ create mode 100644 New Text Document (2).txt
+ create mode 100644 second_day.txt
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git status
+On branch CR1
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git log --oneline --graph --decorate
+* f36cab6 (HEAD -> CR1) file 2 added for CR1
+*   d4dda17 (master) file1 is updated for  resolve conflict
+|\
+| * 4a0f3d7 (bug2) file is updated to fix bug2
+* | 79f8ab7 file1 is updated to for login feature
+|/
+* c66c5bd file is updated to fix bug1
+* 6eba3f0 file is updated
+* da53863 File to be Removed
+* 3f8c245 File tobe Deleted Added
+* f3200af created gitignore file to skip
+* 77618a4 File1 updates for feature logout
+* 55c9ad4 File1 updates for feature login
+* 054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git checkout master
+Switched to branch 'master'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git commit -am "file2 is updated CR1 "
+[master c7e99c3] file2 is updated CR1
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline --graph --decorate
+* c7e99c3 (HEAD -> master) file2 is updated CR1
+*   d4dda17 file1 is updated for  resolve conflict
+|\
+| * 4a0f3d7 (bug2) file is updated to fix bug2
+* | 79f8ab7 file1 is updated to for login feature
+|/
+* c66c5bd file is updated to fix bug1
+* 6eba3f0 file is updated
+* da53863 File to be Removed
+* 3f8c245 File tobe Deleted Added
+* f3200af created gitignore file to skip
+* 77618a4 File1 updates for feature logout
+* 55c9ad4 File1 updates for feature login
+* 054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git checkout CR1
+Switched to branch 'CR1'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git log --oneline
+f36cab6 (HEAD -> CR1) file 2 added for CR1
+d4dda17 file1 is updated for  resolve conflict
+79f8ab7 file1 is updated to for login feature
+4a0f3d7 (bug2) file is updated to fix bug2
+c66c5bd file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: file 2 added for CR1
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git log --oneline
+1092c39 (HEAD -> CR1) file 2 added for CR1
+c7e99c3 (master) file2 is updated CR1
+d4dda17 file1 is updated for  resolve conflict
+79f8ab7 file1 is updated to for login feature
+4a0f3d7 (bug2) file is updated to fix bug2
+c66c5bd file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git checkout master
+Switched to branch 'master'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git merge CR1
+Updating c7e99c3..1092c39
+Fast-forward
+ New Text Document (2).txt |   1 +
+ second_day.txt            | 314 ++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 315 insertions(+)
+ create mode 100644 New Text Document (2).txt
+ create mode 100644 second_day.txt
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline
+1092c39 (HEAD -> master, CR1) file 2 added for CR1
+c7e99c3 file2 is updated CR1
+d4dda17 file1 is updated for  resolve conflict
+79f8ab7 file1 is updated to for login feature
+4a0f3d7 (bug2) file is updated to fix bug2
+c66c5bd file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline --graph --decorate
+* 1092c39 (HEAD -> master, CR1) file 2 added for CR1
+* c7e99c3 file2 is updated CR1
+*   d4dda17 file1 is updated for  resolve conflict
+|\
+| * 4a0f3d7 (bug2) file is updated to fix bug2
+* | 79f8ab7 file1 is updated to for login feature
+|/
+* c66c5bd file is updated to fix bug1
+* 6eba3f0 file is updated
+* da53863 File to be Removed
+* 3f8c245 File tobe Deleted Added
+* f3200af created gitignore file to skip
+* 77618a4 File1 updates for feature logout
+* 55c9ad4 File1 updates for feature login
+* 054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git tag
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git tag V1.0
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline
+1092c39 (HEAD -> master, tag: V1.0, CR1) file 2 added for CR1
+c7e99c3 file2 is updated CR1
+d4dda17 file1 is updated for  resolve conflict
+79f8ab7 file1 is updated to for login feature
+4a0f3d7 (bug2) file is updated to fix bug2
+c66c5bd file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline --graph --decorate
+* 1092c39 (HEAD -> master, tag: V1.0, CR1) file 2 added for CR1
+* c7e99c3 file2 is updated CR1
+*   d4dda17 file1 is updated for  resolve conflict
+|\
+| * 4a0f3d7 (bug2) file is updated to fix bug2
+* | 79f8ab7 file1 is updated to for login feature
+|/
+* c66c5bd file is updated to fix bug1
+* 6eba3f0 file is updated
+* da53863 File to be Removed
+* 3f8c245 File tobe Deleted Added
+* f3200af created gitignore file to skip
+* 77618a4 File1 updates for feature logout
+* 55c9ad4 File1 updates for feature login
+* 054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git checkout CR1
+Switched to branch 'CR1'
+M       New Text Document (2).txt
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (CR1)
+$ git checkout master
+Switched to branch 'master'
+M       New Text Document (2).txt
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git checkout bug2
+error: Your local changes to the following files would be overwritten by checkout:
+        New Text Document (2).txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git stash save mychange
+Saved working directory and index state On master: mychange
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git stash list
+stash@{0}: On master: mychange
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git checkout bug2
+Switched to branch 'bug2'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug2)
+$ git checkout master
+Switched to branch 'master'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline --graph --decorate
+* 1092c39 (HEAD -> master, tag: V1.0, CR1) file 2 added for CR1
+* c7e99c3 file2 is updated CR1
+*   d4dda17 file1 is updated for  resolve conflict
+|\
+| * 4a0f3d7 (bug2) file is updated to fix bug2
+* | 79f8ab7 file1 is updated to for login feature
+|/
+* c66c5bd file is updated to fix bug1
+* 6eba3f0 file is updated
+* da53863 File to be Removed
+* 3f8c245 File tobe Deleted Added
+* f3200af created gitignore file to skip
+* 77618a4 File1 updates for feature logout
+* 55c9ad4 File1 updates for feature login
+* 054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git stash apply $ git stash apply
+Too many revisions specified: '$' 'git' 'stash' 'apply'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git stash apply
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   New Text Document (2).txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git stash apply stash@{0}
+error: Your local changes to the following files would be overwritten by merge:
+        New Text Document (2).txt
+Please commit your changes or stash them before you merge.
+Aborting
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
