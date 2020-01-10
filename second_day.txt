@@ -1,0 +1,314 @@
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline
+da53863 (HEAD -> master) File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git commit -am "file is updated"
+[master 6eba3f0] file is updated
+ 1 file changed, 4 deletions(-)
+ delete mode 100644 File1.txt
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git branch
+* master
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git branch bug1
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git branch
+  bug1
+* master
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git status
+On branch bug1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   New Text Document.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git log --oneline
+6eba3f0 (HEAD -> bug1, master) file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git commit -am "file is updated to fix bug1"
+[bug1 c66c5bd] file is updated to fix bug1
+ 1 file changed, 1 insertion(+)
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git status
+On branch bug1
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git log --oneline
+c66c5bd (HEAD -> bug1) file is updated to fix bug1
+6eba3f0 (master) file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git checkout master
+Switched to branch 'master'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline
+6eba3f0 (HEAD -> master) file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git merge bug1
+Updating 6eba3f0..c66c5bd
+Fast-forward
+ New Text Document.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git branch -d bug1
+Deleted branch bug1 (was c66c5bd).
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git branch bug1
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git commit -am "file is updated to fix bug1"
+On branch master
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git checkout master
+Already on 'master'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline
+c66c5bd (HEAD -> master, bug1) file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git merge bug1
+Already up to date.
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git merge bug1
+Already up to date.
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git branch -D bug1
+error: Cannot delete branch 'bug1' checked out at 'H:/GitProject'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git branch -d bug1
+error: Cannot delete branch 'bug1' checked out at 'H:/GitProject'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug1)
+$ git checkout master
+Switched to branch 'master'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git branch -D bug1
+Deleted branch bug1 (was c66c5bd).
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git checkout -b bug2
+Switched to a new branch 'bug2'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug2)
+$ git log --oneline
+c66c5bd (HEAD -> bug2, master) file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug2)
+$ git commit -am "file is updated to fix bug2"
+[bug2 4a0f3d7] file is updated to fix bug2
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug2)
+$ git status
+On branch bug2
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug2)
+$ git log --oneline
+4a0f3d7 (HEAD -> bug2) file is updated to fix bug2
+c66c5bd (master) file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (bug2)
+$ git checkout master
+Switched to branch 'master'
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline
+c66c5bd (HEAD -> master) file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git commit -am "file1 is updated to for login feature"
+[master 79f8ab7] file1 is updated to for login feature
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline
+79f8ab7 (HEAD -> master) file1 is updated to for login feature
+c66c5bd file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git merge bug2
+Auto-merging New Text Document.txt
+CONFLICT (content): Merge conflict in New Text Document.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   New Text Document.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master|MERGING)
+$ git commit -am "file1 is updated for  resolve conflict "
+[master d4dda17] file1 is updated for  resolve conflict
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline
+d4dda17 (HEAD -> master) file1 is updated for  resolve conflict
+79f8ab7 file1 is updated to for login feature
+4a0f3d7 (bug2) file is updated to fix bug2
+c66c5bd file is updated to fix bug1
+6eba3f0 file is updated
+da53863 File to be Removed
+3f8c245 File tobe Deleted Added
+f3200af created gitignore file to skip
+77618a4 File1 updates for feature logout
+55c9ad4 File1 updates for feature login
+054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --online --graph --decorate
+fatal: unrecognized argument: --online
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
+$ git log --oneline --graph --decorate
+*   d4dda17 (HEAD -> master) file1 is updated for  resolve conflict
+|\
+| * 4a0f3d7 (bug2) file is updated to fix bug2
+* | 79f8ab7 file1 is updated to for login feature
+|/
+* c66c5bd file is updated to fix bug1
+* 6eba3f0 file is updated
+* da53863 File to be Removed
+* 3f8c245 File tobe Deleted Added
+* f3200af created gitignore file to skip
+* 77618a4 File1 updates for feature logout
+* 55c9ad4 File1 updates for feature login
+* 054b491 File1  Created with hello world and welcome me git message initial commit
+
+priyanka_gite@eltp-java-12 MINGW64 /h/GitProject (master)
